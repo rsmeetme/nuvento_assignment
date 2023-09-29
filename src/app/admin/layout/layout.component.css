@@ -13,6 +13,7 @@ header{
     width: calc(100% - 250px);
     top:0px;
     right:0px;
+    z-index: 99;
 }
 
 aside{

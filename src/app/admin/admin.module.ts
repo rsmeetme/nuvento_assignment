@@ -6,7 +6,7 @@ import { CategoryModule } from './category/category.module';
 import { AttributeModule } from './attribute/attribute.module';
 import { ButtonModule } from 'primeng/button';
 import { LayoutComponent } from './layout/layout.component';
-import { MenuModule } from 'primeng/menu';
+import { InputTextModule } from 'primeng/inputtext';
 
 
 @NgModule({
@@ -20,7 +20,7 @@ import { MenuModule } from 'primeng/menu';
     CategoryModule,
     AttributeModule,
     ButtonModule,
-    MenuModule
+    InputTextModule
   ]
 })
 export class AdminModule { }

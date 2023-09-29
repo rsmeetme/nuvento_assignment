@@ -1,3 +1,13 @@
-h2{
-    margin-top:0px;
+h2 {
+    margin-top: 0px;
 }
+
+#categories {
+    padding: 10px 20px;
+    border: none;
+}
+
+#categories option{
+    padding: 5px;
+}
+

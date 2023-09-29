@@ -6,20 +6,16 @@ import { UpdateProductComponent } from './update-product/update-product.componen
 
 const routes: Routes = [
   {
-    path:'',
-    component:ProductListingComponent
+    path: '',
+    component: ProductListingComponent
   },
   {
-    path:'add-product',
-    component:AddProductComponent
+    path: 'add-product',
+    component: AddProductComponent
   },
   {
-    path:'update-product/:id',
-    component:UpdateProductComponent
-  },
-  {
-    path:'delete-product/:id',
-    component:ProductListingComponent
+    path: 'update-product/:id',
+    component: UpdateProductComponent
   }
 
 ];
