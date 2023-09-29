@@ -1,0 +1,57 @@
+@import "primeicons/primeicons.css";
+main{
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(243, 247, 247);
+    padding-top: 130px;
+}
+
+header{
+    height: 80px;
+    background-color: #fff;
+    position: fixed;
+    width: calc(100% - 250px);
+    top:0px;
+    right:0px;
+}
+
+aside{
+    height:calc(100vh);
+    background-color:#0f1a34;
+    position: fixed;
+    width:250px;
+    bottom: 0px;
+    left:0px;
+
+}
+
+aside h1{
+    margin:0px;
+    line-height: 80px;
+    color:#fff;
+    background-color:#182444;
+}
+
+section{
+    margin-left: 300px;
+    margin-right:50px;
+    height: 1200px;
+    width: calc(100% - 350px);
+}
+
+.list-none a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 21px;
+    line-height: 50px;
+
+}
+
+.user-name a{
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 50px;
+    display: inline-block;
+    margin-left:10px;
+    color:#495057;
+}

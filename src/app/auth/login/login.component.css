@@ -1,0 +1,11 @@
+.form-container {
+    margin: auto auto;
+}
+
+.form {
+    width: 400px;
+}
+
+.error {
+    color: #e24c4c;
+}

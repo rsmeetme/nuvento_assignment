@@ -1,0 +1,38 @@
+<main>
+    <header>
+        <div class="flex justify-content-between flex-wrap card-container purple-container">
+            <div
+                class="flex align-items-center justify-content-center text-color  h-4rem font-bold text-white border-round m-2 user-name">
+                <span class="pi pi-user"></span>  <a>Hi, Rajender Sharma</a>
+            </div>
+            <div
+                class="flex align-items-center justify-content-center  text-color h-4rem  font-bold text-white border-round m-2 user-name">
+                <a [routerLink]="['']">
+                    Logout
+                </a></div>
+        </div>
+    </header>
+    <aside>
+        <h1 class="text-center text-3xl">ADMIN PANEL</h1>
+        <ul class="list-none">
+            <li>
+                <a [routerLink]="['/admin']">
+                    Products
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/categories']">
+                    Category
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/attributes']">
+                    Attribute
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <section>
+        <router-outlet></router-outlet>
+    </section>
+</main>

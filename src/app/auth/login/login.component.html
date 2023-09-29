@@ -1,0 +1,31 @@
+<br>
+<br>
+<br>
+<div class="card flex justify-content-center form-container">
+    <p-card header="Admin Login">
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="field">
+                <div class="flex flex-column gap-2">
+                    <label htmlFor="username">Username</label>
+                    <input type="text" pInputText id="username" name="username" formControlName="username" />
+                    <div *ngIf="loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched">
+                        <small class="error" id="username-help">User name can not be empty.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="flex flex-column gap-2">
+                    <label htmlFor="username">password</label>
+                    <input type="password" pInputText id="password" name="password" formControlName="password" />
+                    <div *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
+                        <small class="error" id="username-help">Password can not be empty</small>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card flex justify-content-center">
+                <button type="submit" pButton pRipple label="Submit" class="p-button-success"></button>
+            </div>
+        </form>
+    </p-card>
+</div>
