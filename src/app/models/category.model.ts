@@ -1,7 +1,7 @@
 export interface CategoryModel {
     id: number;
     name: string;
-    parentId: number;
+    parentId: any;
 }
 
 export interface Category {

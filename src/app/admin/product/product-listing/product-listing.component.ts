@@ -6,6 +6,7 @@ import { getProducts } from 'src/app/store/products/product.selector';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { deleteProduct } from 'src/app/store/products/product.action';
+import { AppStateModel } from 'src/app/store/globel/app.state.model';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class ProductListingComponent implements OnInit {
   products!: any;
   cachedProduct!: any;
   categories!: any;
-  constructor(private store: Store, private router: Router) { }
+  constructor(private store: Store<AppStateModel>, private router: Router) { }
   ngOnInit(): void {
     this.store.select(getProducts).subscribe((res) => {
       console.log(res);

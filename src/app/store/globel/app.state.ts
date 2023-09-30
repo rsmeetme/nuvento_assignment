@@ -1,6 +1,9 @@
+import { attributeReducer } from "../attribute/attribute.reducer";
+import { categorytReducer } from "../category/category.reducer";
 import { productReducer } from "../products/product.reducer";
-import { AppStateModel } from "./app.state.model";
 
 export const AppState = {
-    product: productReducer
+    product: productReducer,
+    category:categorytReducer,
+    attribute:attributeReducer
 }
