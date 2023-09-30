@@ -14,7 +14,7 @@ const _attributeReducer = createReducer(
         const _attribute = action.addAttribute;
         return {
             ...state,
-            productList: [...state.attributeList, _attribute]
+            attributeList: [...state.attributeList, _attribute]
         }
     }),
     on(updateAttribute, (state, { updateAttribute }) => {
@@ -26,14 +26,14 @@ const _attributeReducer = createReducer(
         });
         return {
             ...state,
-            productList: [..._attributes]
+            attributeList: [..._attributes]
         }
     }),
     on(deleteAttribute, (state, { attributeId }) => {
         const _attributes = state.attributeList.filter(attribute => attribute.id != attributeId);
         return {
             ...state,
-            productList: [..._attributes]
+            attributeList: [..._attributes]
         }
     })
 )

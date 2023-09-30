@@ -25,9 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ButtonModule,
     InputTextModule,
     TableModule,
-    ButtonModule,
-    ReactiveFormsModule,
-    InputTextModule
+    ReactiveFormsModule
   ]
 })
 export class CategoryModule { }

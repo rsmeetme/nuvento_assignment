@@ -13,12 +13,10 @@ import { AppStateModel } from 'src/app/store/globel/app.state.model';
 })
 export class CategoryListComponent implements OnInit {
   categories!: any;
-  cachedCategories!: any;
   constructor(private store: Store<AppStateModel>, private router: Router) { }
   ngOnInit(): void {
     this.store.select(getCategories).subscribe((categories: CategoryModel[]) => {
       console.log(categories);
-      this.categories = categories;
       this.categories = categories;
     });
   }

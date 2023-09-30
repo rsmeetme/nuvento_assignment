@@ -1,1 +1,60 @@
-<p>add-attribute works!</p>
+<h2>Add Category</h2>
+<div class="frm-container">
+    <form class="form" [formGroup]="addAttributeForm" (ngSubmit)="onSubmit()">
+        <div class="grid">
+            <div class="col-2">
+                <div class="field ">
+                    <div class="flex flex-column gap-2">
+                        <label htmlFor="id">Id</label>
+                        <input type="text" pInputText id="id" name="id" formControlName="id" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="flex flex-column gap-2">
+                    <label htmlFor="name">Name</label>
+                    <input type="text" pInputText id="name" name="name" formControlName="name" />
+                    <div
+                        *ngIf="addAttributeForm.get('name')?.hasError('required') && addAttributeForm.get('name')?.touched">
+                        <small class="error" id="username-help">Name can not be empty</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-8">
+                <form class="flex flex-column gap-2" [formGroup]="addValueForm" (ngSubmit)="onNestedSubmit()">
+                    <label htmlFor="value">Values</label>
+                    <div class="grid">
+                        <div class="col-6">
+                            <div class="flex flex-column gap-2">
+                                <input type="text" pInputText id="attrvalue" name="attrvalue"
+                                    formControlName="attrvalue" />
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <button type="submit" pButton pRipple label="Add" class="p-button-warning"></button>
+                        </div>
+                    </div>
+                </form>
+                <br>
+                <div class="grid">
+                    <div class="col-10">
+                        <div class="card flex align-items-center gap-2 flex-wrap">
+                            <ng-container *ngFor="let item of attributeValues; let i=index;">
+                                <span [id]="i" (click)="removeChip(i)">
+                                    <p-chip [label]="item" [removable]="true"></p-chip>
+                                </span>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card flex">
+            <button type="submit" pButton pRipple label="Submit" class="p-button-success"></button>
+        </div>
+    </form>
+
+</div>

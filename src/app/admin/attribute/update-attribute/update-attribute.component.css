@@ -1,0 +1,15 @@
+.frm-container{
+    padding: 50px;
+    background-color: #fff;
+}
+
+#parentCategoryId {
+    padding: 14px 20px;
+    border: solid 1px #ced4da;
+    border-radius: 6px;
+    /* margin-bottom: 15px; */
+}
+
+#parentCategoryId option{
+    padding: 5px;
+}
