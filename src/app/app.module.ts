@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { AppState } from './store/globel/app.state';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CanLoadAuthGuard } from './auth/user-auth.guard';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     StoreModule.forRoot(AppState),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
-  providers: [],
+  providers: [CanLoadAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

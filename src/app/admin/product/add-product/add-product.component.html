@@ -7,7 +7,8 @@
                     <div class="flex flex-column gap-2">
                         <label htmlFor="categories">Select Category</label>
                         <select id="categories" name="categories" (change)="onChange($event)">
-                            <option *ngFor="let category of categories" [value]="category.id" >{{category.name}}</option>
+                            <option value="0" selected>- Select -</option>
+                            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
                         </select>
                     </div>
                 </div>
@@ -42,6 +43,59 @@
                         *ngIf="addProductForm.get('description')?.hasError('required') && addProductForm.get('description')?.touched">
                         <small class="error" id="username-help">Description can not be empty</small>
                     </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="grid">
+            <div class="col-3">
+                <div class="field ">
+
+                </div>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-8">
+                <form class="flex flex-column gap-2" [formGroup]="addAttributeIdForm" (ngSubmit)="onNestedSubmit()">
+                    <label htmlFor="value">Select Attribute</label>
+                    <div class="grid">
+                        <div class="col-6">
+                            <div class="flex flex-column gap-2">
+                                <select id="attributeid" name="attrIds" formControlName="attrIds">
+                                    <option value="0" selected>Select</option>
+                                    <option *ngFor="let t of attributes" [value]="t.id">{{t.id}}-{{t.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <button type="submit" pButton pRipple label="Add" class="p-button-warning"></button>
+                        </div>
+                    </div>
+                </form>
+                <br>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-10">
+                <div class="card flex align-items-center gap-2 flex-wrap">
+                    <ng-container *ngFor="let item of selectedAttributes; let i=index;">
+                        <div class="add-attr">
+                            <div class="grid">
+                                <div class="col-2">
+                                    <div class="attr-name">{{item.name}}</div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="remove" (click)="onRemoveAttr(item.id)">remove</div>
+                                </div>
+                            </div>
+                            
+                            <ng-container *ngFor="let v of item.values; let i=index;">
+                                <span class="chp" [id]="i">
+                                    <p-chip [label]="v" [removable]="true"></p-chip>
+                                </span>
+                            </ng-container>
+                        </div>
+                    </ng-container>
                 </div>
             </div>
         </div>

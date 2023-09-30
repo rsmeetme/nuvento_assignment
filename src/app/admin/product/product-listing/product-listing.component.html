@@ -3,16 +3,18 @@
     <div class="flex justify-content-between flex-wrap card-container purple-container">
         <div class="flex align-items-center justify-content-center  h-4rem font-bold text-white border-round m-2">
             <select id="categories" (change)="onChange($event)">
-                <option *ngFor="let category of categories" [value]="category.id" >{{category.name}}</option>
+                <option value="0" selected>All</option>
+                <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
             </select>
         </div>
         <div class="flex align-items-center justify-content-center  h-4rem font-bold text-white border-round m-2">
-            <p-button label="Add Product" styleClass="p-button-outlined p-button-primary p-button-sm mx-1" (click)="onAddButtonClick()"></p-button>
+            <p-button label="Add Product" styleClass="p-button-outlined p-button-primary p-button-sm mx-1"
+                (click)="onAddButtonClick()"></p-button>
         </div>
     </div>
 </div>
 <div class="card flex justify-content-center">
-   
+
 </div>
 <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
@@ -20,6 +22,7 @@
             <th>Id</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Attributes</th>
             <th>Actions</th>
         </tr>
     </ng-template>
@@ -29,8 +32,18 @@
             <td>{{ product.name }}</td>
             <td>{{ product.description }}</td>
             <td>
-                <p-button label="Edit" styleClass="p-button-outlined p-button-warning p-button-sm mx-1" (click)="onUpdateButtonClick(product.id)" ></p-button>
-                <p-button label="Delete" styleClass="p-button-outlined p-button-danger p-button-sm mx-1" (click)="onDeleteButtonClick(product.id)"></p-button>
+                <table>
+                    <tr *ngFor="let t of product.attributes ">
+                        <td>{{t.name}} -</td>
+                        <td>{{t.values.join()}}</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <p-button label="Edit" styleClass="p-button-outlined p-button-warning p-button-sm mx-1"
+                    (click)="onUpdateButtonClick(product.id)"></p-button>
+                <p-button label="Delete" styleClass="p-button-outlined p-button-danger p-button-sm mx-1"
+                    (click)="onDeleteButtonClick(product.id)"></p-button>
             </td>
         </tr>
     </ng-template>

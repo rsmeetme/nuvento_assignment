@@ -7,6 +7,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { deleteProduct } from 'src/app/store/products/product.action';
 import { AppStateModel } from 'src/app/store/globel/app.state.model';
+import { getCategories } from 'src/app/store/category/category.selector';
 
 
 @Component({
@@ -24,13 +25,10 @@ export class ProductListingComponent implements OnInit {
       console.log(res);
       this.products = res;
       this.cachedProduct = res;
+    });
+    this.store.select(getCategories).subscribe(res => {
+      this.categories = res;
     })
-    this.categories = [
-      { id: 0, name: 'All Categories', code: 'NY' },
-      { id: 1, name: 'Category 1', code: 'NY' },
-      { id: 2, name: 'Category 2', code: 'RM' },
-      { id: 3, name: 'Category 3', code: 'LDN' }
-    ];
   }
   onChange(e: any) {
     let selectBox: any = document.getElementById("categories");
@@ -55,7 +53,7 @@ export class ProductListingComponent implements OnInit {
   }
 
   onDeleteButtonClick(productId: number) {
-    this.store.dispatch(deleteProduct({productId:productId}))
+    this.store.dispatch(deleteProduct({ productId: productId }))
   }
 
 }

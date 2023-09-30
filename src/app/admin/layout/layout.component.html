@@ -3,11 +3,11 @@
         <div class="flex justify-content-between flex-wrap card-container purple-container">
             <div
                 class="flex align-items-center justify-content-center text-color  h-4rem font-bold text-white border-round m-2 user-name">
-                <span class="pi pi-user"></span>  <a>Hi, Rajender Sharma</a>
+                <span class="pi pi-user"></span>  <a>Hi, Admin</a>
             </div>
             <div
                 class="flex align-items-center justify-content-center  text-color h-4rem  font-bold text-white border-round m-2 user-name">
-                <a [routerLink]="['']">
+                <a [routerLink]="['/']" (click)="onLogout()">
                     Logout
                 </a></div>
         </div>

@@ -23,6 +23,7 @@ export class LoginComponent {
     // console.log(this.loginForm.value);
     if (this.loginForm.valid) {
       if (this.loginForm.value.username == Credential.USER_NAME && this.loginForm.value.username === Credential.PASSWORD) {
+        localStorage.setItem('isLogin', JSON.stringify(true));
         this.router.navigate(['/admin']);
       }
     }

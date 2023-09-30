@@ -11,6 +11,7 @@ import { ButtonModule } from 'primeng/button';
 // import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { ChipModule } from 'primeng/chip';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { InputTextModule } from 'primeng/inputtext';
     ButtonModule,
     // DropdownModule,
     ReactiveFormsModule,
-    InputTextModule
+    InputTextModule,
+    ChipModule
   ]
 })
 export class ProductModule { }
