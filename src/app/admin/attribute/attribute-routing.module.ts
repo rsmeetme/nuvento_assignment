@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AttributeListComponent } from './attribute-list/attribute-list.component';
 import { AddAttributeComponent } from './add-attribute/add-attribute.component';
 import { UpdateAttributeComponent } from './update-attribute/update-attribute.component';
-import { DeleteAttributeComponent } from './delete-attribute/delete-attribute.component';
 
 const routes: Routes = [
   {
@@ -17,10 +16,6 @@ const routes: Routes = [
   {
     path:'update-attribute/:id',
     component:UpdateAttributeComponent
-  },
-  {
-    path:'delete-attribute/:id',
-    component:DeleteAttributeComponent
   }
 ];
 
